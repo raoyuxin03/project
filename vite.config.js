@@ -71,6 +71,7 @@ function mediaDownloadProxyPlugin() {
 }
 
 export default defineConfig({
+  base: './',
   plugins: [mediaDownloadProxyPlugin(), react(), tailwindcss()],
   server: {
     host: '0.0.0.0',
