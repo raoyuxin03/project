@@ -1,0 +1,35 @@
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/media-download-proxy",
+      "destination": "/api/media-download-proxy"
+    },
+    {
+      "source": "/api-proxy/:path*",
+      "destination": "https://apihub.agnes-ai.com/:path*"
+    },
+    {
+      "source": "/aixoras-proxy/:path*",
+      "destination": "https://api.aixoras.com/:path*"
+    },
+    {
+      "source": "/change2pro-proxy/:path*",
+      "destination": "https://api.change2pro.com/:path*"
+    },
+    {
+      "source": "/public-upload/litterbox",
+      "destination": "https://litterbox.catbox.moe/resources/internals/api.php"
+    },
+    {
+      "source": "/public-upload/uguu",
+      "destination": "https://uguu.se/upload.php"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
