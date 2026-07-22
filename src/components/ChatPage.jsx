@@ -4,7 +4,7 @@ import { chatCompletion, getApiKey } from '../api'
 const INITIAL_MESSAGES = [
   {
     role: 'assistant',
-    content: '你好，我是 AI工作台，当前聊天模型是 Agnes 2.0 Flash。',
+    content: '你好，我是 AI创作工作台，当前聊天模型是 Agnes 2.0 Flash。',
   },
 ]
 
@@ -13,7 +13,7 @@ const CHAT_CAPABILITIES = [
     id: 'general',
     label: '通用对话',
     description: '问答、写作、解释、规划',
-    systemPrompt: '你是 AI工作台，一个清晰、直接、可靠的中文 AI 助手。',
+    systemPrompt: '你是 AI创作工作台，一个清晰、直接、可靠的中文 AI 助手。',
     temperature: 0.7,
     maxTokens: 1200,
   },
@@ -22,7 +22,7 @@ const CHAT_CAPABILITIES = [
     label: '图片 Prompt',
     description: '整理主体、场景、光线、构图',
     systemPrompt:
-      '你是 AI工作台图片生成提示词助手。把用户想法整理成适合 agnes-image-2.1-flash 的高质量提示词。优先输出 English prompt，并补充 negative prompt、尺寸建议和可调参数。保留用户的核心主体、风格、光线、构图和限制。',
+      '你是 AI创作工作台图片生成提示词助手。把用户想法整理成适合 agnes-image-2.1-flash 的高质量提示词。优先输出 English prompt，并补充 negative prompt、尺寸建议和可调参数。保留用户的核心主体、风格、光线、构图和限制。',
     temperature: 0.45,
     maxTokens: 1600,
   },
@@ -31,7 +31,7 @@ const CHAT_CAPABILITIES = [
     label: '视频 Prompt',
     description: '镜头、运动、节奏、约束',
     systemPrompt:
-      '你是 AI工作台视频生成提示词助手。把用户想法整理成适合 agnes-video-v2.0 的英文视频提示词。明确主体、动作、镜头运动、景别、光线、时长感、画面风格和不要出现的内容。不要编造接口不支持的参数。',
+      '你是 AI创作工作台视频生成提示词助手。把用户想法整理成适合 agnes-video-v2.0 的英文视频提示词。明确主体、动作、镜头运动、景别、光线、时长感、画面风格和不要出现的内容。不要编造接口不支持的参数。',
     temperature: 0.45,
     maxTokens: 1600,
   },
@@ -69,13 +69,13 @@ const QUICK_ACTIONS = [
     id: 'make-image-prompt',
     label: '优化图片 Prompt',
     instruction:
-      '把下面内容改写成适合 AI工作台图片生成的提示词。输出：中文理解、English prompt、negative prompt、推荐尺寸。',
+      '把下面内容改写成适合 AI创作工作台图片生成的提示词。输出：中文理解、English prompt、negative prompt、推荐尺寸。',
   },
   {
     id: 'make-video-prompt',
     label: '优化视频 Prompt',
     instruction:
-      '把下面内容改写成适合 AI工作台视频生成的英文提示词。输出：English prompt、negative prompt、镜头运动、推荐时长和分辨率。',
+      '把下面内容改写成适合 AI创作工作台视频生成的英文提示词。输出：English prompt、negative prompt、镜头运动、推荐时长和分辨率。',
   },
   {
     id: 'summarize',
@@ -113,7 +113,7 @@ function extractAssistantText(response) {
 function messageLabel(role) {
   if (role === 'user') return '你'
   if (role === 'system') return 'System'
-  return 'AI工作台'
+  return 'AI创作工作台'
 }
 
 export default function ChatPage() {

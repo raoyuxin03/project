@@ -224,7 +224,7 @@ export default function Sidebar({ page, setPage, refreshKey }) {
               A
             </span>
             <div>
-              <h1 className="text-lg font-bold text-slate-900">AI工作台</h1>
+              <h1 className="text-lg font-bold text-slate-900">AI创作工作台</h1>
               <p className="text-xs text-slate-400">创作工作流</p>
             </div>
           </button>

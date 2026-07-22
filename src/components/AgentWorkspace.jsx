@@ -138,7 +138,7 @@ const SEEDANCE_AUDIO_REFERENCE_LIMIT = 3
 const MAX_MENTION_REFERENCES = 8
 
 const CHAT_SYSTEM_PROMPT =
-  '你是 AI工作台创作助手。用中文清晰、直接地回答用户，也可以帮助整理图片提示词、视频提示词、分镜、参考图使用方案和下一步创作操作。'
+  '你是 AI创作工作台创作助手。用中文清晰、直接地回答用户，也可以帮助整理图片提示词、视频提示词、分镜、参考图使用方案和下一步创作操作。'
 
 const AIXORAS_REFERENCE_URL_ERROR =
   'Seedance / Aixoras 参考素材需要公网图片、视频或音频 URL。已尝试自动转换本地/粘贴素材，但没有拿到可用 URL；请改用更小的文件，或导入可公开访问的媒体 URL。'
@@ -2315,7 +2315,7 @@ export default function AgentWorkspace({ onGenerated, onNavigate, view = 'creato
     setBusy(true)
     setError('')
     setDebugInfo(null)
-    setStatus('AI工作台正在回复...')
+    setStatus('AI创作工作台正在回复...')
 
     try {
       const response = await chatCompletion({
@@ -3190,7 +3190,7 @@ export default function AgentWorkspace({ onGenerated, onNavigate, view = 'creato
         <div className="relative mx-auto max-w-7xl px-6 pb-8 pt-6">
           <div className="mb-5 flex items-center justify-between gap-4">
             <div>
-              <h1 className="text-2xl font-semibold tracking-normal text-slate-950">AI工作台</h1>
+              <h1 className="text-2xl font-semibold tracking-normal text-slate-950">AI创作工作台</h1>
               <p className="mt-1 text-sm text-slate-600">agnes-2.0-flash · {selectedImageModel} · agnes-video-v2.0</p>
             </div>
             <div className="flex items-center gap-2">
@@ -3210,7 +3210,7 @@ export default function AgentWorkspace({ onGenerated, onNavigate, view = 'creato
               </button>
               <div className="flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-xs font-medium text-slate-600 shadow-sm backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                AI工作台
+                AI创作工作台
               </div>
             </div>
           </div>
@@ -3403,7 +3403,7 @@ export default function AgentWorkspace({ onGenerated, onNavigate, view = 'creato
                   onChange={handlePromptInputChange}
                   onPaste={handlePromptPaste}
                   onKeyDown={handleInputKeyDown}
-                  placeholder={workflowMode === 'chat' ? '和 AI工作台聊聊...' : workflowMode === 'image' ? '输入图片描述，或上传参考图...' : '输入视频提示词，可粘贴图片/视频/音频参考...'}
+                  placeholder={workflowMode === 'chat' ? '和 AI创作工作台聊聊...' : workflowMode === 'image' ? '输入图片描述，或上传参考图...' : '输入视频提示词，可粘贴图片/视频/音频参考...'}
                   className={`w-full resize-none border-0 bg-transparent px-2 py-2 text-base leading-7 text-slate-900 outline-none placeholder:text-slate-400 ${
                     workflowMode === 'video' ? 'pr-28' : ''
                   } ${workflowMode === 'video' ? 'min-h-[210px]' : 'min-h-28'}`}
@@ -3799,7 +3799,7 @@ export default function AgentWorkspace({ onGenerated, onNavigate, view = 'creato
         {isCanvasView && (
           <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
             <div>
-              <h1 className="text-2xl font-semibold tracking-normal text-slate-950">AI工作台画布</h1>
+              <h1 className="text-2xl font-semibold tracking-normal text-slate-950">AI创作工作台画布</h1>
               <p className="mt-1 text-sm text-slate-600">无限画布还没完善成功，目前先用于整理素材、节点和剧本关系。</p>
             </div>
             <div className="flex items-center gap-2">
@@ -3828,7 +3828,7 @@ export default function AgentWorkspace({ onGenerated, onNavigate, view = 'creato
           <section className="space-y-5">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <h1 className="text-2xl font-semibold tracking-normal text-slate-950">AI工作台资产</h1>
+                <h1 className="text-2xl font-semibold tracking-normal text-slate-950">AI创作工作台资产</h1>
                 <p className="mt-1 text-sm text-slate-600">本地上传、URL 导入、生成结果都会集中保存在这里。</p>
               </div>
               <button
@@ -4487,7 +4487,7 @@ export default function AgentWorkspace({ onGenerated, onNavigate, view = 'creato
                     </div>
                   )}
                   <p className={`text-xs font-semibold ${message.role === 'user' ? 'text-white/70' : 'text-slate-500'}`}>
-                    {message.role === 'user' ? '你' : 'AI工作台'}
+                    {message.role === 'user' ? '你' : 'AI创作工作台'}
                   </p>
                   <p className="mt-1 whitespace-pre-wrap break-words text-sm leading-6">{message.content}</p>
                 </div>
